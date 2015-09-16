@@ -1,0 +1,15 @@
+ui combinacion entre scope and template
+
+good ui :
+simiple tamplate code
+composeable directives
+
+
+be expresive direcvites extend html
+
+isolation is the answer
+
+controller is handling the data and
+directive is handling the structure of the ui
+
+isolate the construction into a directive
