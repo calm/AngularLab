@@ -16,7 +16,7 @@
         You did not enter a valid postal code
       </div>
     </form>
-    
+
     <script type="text/javascript">
       angular.module("MyApp",[])
         .controller("FormCtrl", ["$scope", function($scope){
@@ -29,7 +29,7 @@
                 var regex = /[A-Z]\d[A-Z]\ ?\d[A-Z]\d/;
                 var success = regex.test(value);
                 //lo tienes perrito!
-                if(ctrl.$isEmpty(value)){alert("tavacio!+*+,..,!");}
+                if(ctrl.$isEmpty(value)){alert("tavacio!+*+,.sws.,!");}
 
                 ctrl.$setValidity('postal', success);
                 return value;
