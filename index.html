@@ -18,13 +18,22 @@
     </form>
 
     <script type="text/javascript">
+    var a = 1;
+    var b = 2;
+
+    if (true){
+        b= 1;
+    }
+    expect(a==b).toEqual(true);
+    alert('paso??');
+
       angular.module("MyApp",[])
         .controller("FormCtrl", ["$scope", function($scope){
         }])
         .directive('postalCodeValidator',function(){
           return{
             require: 'ngModel',
-            link: function($scope,element,attrs, ctrl){
+            link: function($scope,element,attrs,ctrl){
               ctrl.$parsers.push(function(value){
                 var regex = /[A-Z]\d[A-Z]\ ?\d[A-Z]\d/;
                 var success = regex.test(value);

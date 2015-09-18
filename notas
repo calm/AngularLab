@@ -11,5 +11,79 @@ isolation is the answer
 
 controller is handling the data and
 directive is handling the structure of the ui
-  w
+
 isolate the construction into a directive
+
+----
+
+data bindin ist json info to be rendered smart.
+
+bussiness logic remains in the controller
+
+dependency injection:
+design pattern
+wires all this things dinamicaly automatic.
+
+the whole system is mor eflexible
+
+and it is easier to test.
+
+item.query();
+the controller doesnt use xml nor json,
+the controlelr use item object so,
+the details about the objexct instantiation
+must remain in the model
+
+we must avoid hidden dependencies,
+another reason to instantiate inside the model
+
+factory!!!
+var factory = {
+  getResourceItem: funtcion(){
+    return new RewourceIten();
+  }
+
+}
+
+factory.getResourceItem();
+
+ahora toda la dependency esta en el factory.
+aun hay hidden dependencies
+test? still difficult
+
+now with dependencies:
+module: todo
+todo.controller('App', function($scope, Item))
+
+<body ng-app="todo" ng-controller="App">
+
+todo lo declarado en modulos cargados, está disponible.
+pedir cosas es agregarlas como argumentos en el constructor.
+
+proveer cosas es crearlas en los modulos
+e instanciarlos modulos con dependencies injection
+
+throw new Error('algun eror...');
+
+todo.value('$exceptionHandler', function(e){
+alert(e);
+});
+
+siempre que hay un error es lanzado a exception handling:
+
+
+interaccion con mongolab:
+
+todo.value('apiKey', '12312412342354235')
+
+todo.factory('Item', function($resource){
+  var Item = $resource('http://api.mongolab.org/api/1/databases...')
+  apiKey: apiKey
+});
+
+funciona para simular respuestas positivas del servidor, vacias.
+this.$remove = jasmine.createSpy('$remove');
+
+var module = angular.module('mocks.Item', []);
+
+module.value('Item',MockItem);
